@@ -1,5 +1,5 @@
 # Local Passwords Application
-Windows 10 Universal Application for saving password
+Windows 10 Universal Application - keep your passwords secure
 ## Some feautures:
 * using AES 256 encryption
 * This application don't have permission for internet access, so your passwords are safe
