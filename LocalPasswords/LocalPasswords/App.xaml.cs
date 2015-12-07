@@ -1,4 +1,5 @@
 ﻿using LocalPasswords.Views;
+using LocalPasswordsLib.BLL;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -48,6 +49,8 @@ namespace LocalPasswords
                 //this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+
+            var credential = new CredentialBLL();
 
             var shell = Window.Current.Content as AppShell;
 
