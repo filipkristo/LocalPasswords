@@ -1,4 +1,5 @@
 ﻿using LocalPasswordsLib.BLL;
+using LocalPasswordsLib.Common;
 using LocalPasswordsLib.ObjectModel;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,14 @@ namespace LocalPasswords.ViewModel
 {
     public class RegisterViewModel : ViewModelBase
     {
-        private RegisterModel Model;
+        public RegisterModel Model { get; set; }
 
         public RegisterViewModel()
         {
             Model = new RegisterModel();
         }
 
-        public void RegisterModel()
+        private void Register()
         {
             var credential = new CredentialBLL();
 
@@ -27,6 +28,11 @@ namespace LocalPasswords.ViewModel
             credential.SavePassword(Model.MasterPassword);
 
             App.RootFrame.Navigate(typeof(AppShell));
+        }
+
+        public RelayCommand RegisterCommand
+        {
+            get { return new RelayCommand(Register); }
         }
     }
 }

@@ -8,6 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel>
+            <PasswordBox Password="{x:Bind ViewModel.Model.MasterPassword, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Command="{Binding LoginCommand}" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        
     </Grid>
 </Page>

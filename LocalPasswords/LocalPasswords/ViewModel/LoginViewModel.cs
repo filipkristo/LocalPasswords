@@ -1,4 +1,5 @@
 ﻿using LocalPasswordsLib.BLL;
+using LocalPasswordsLib.Common;
 using LocalPasswordsLib.ObjectModel;
 using System;
 using System.Collections.Generic;
@@ -11,22 +12,25 @@ namespace LocalPasswords.ViewModel
 {
     public class LoginViewModel : ViewModelBase
     {
-        private LoginModel Model;
+        public LoginModel Model { get; set; }
 
         public LoginViewModel()
         {
             Model = new LoginModel();
         }
 
-        public void Login()
+        private void Login()
         {
             var credential = new CredentialBLL();
             var pass = credential.RetrivePassword();
 
             if (pass != Model.MasterPassword)
                 throw new Exception("Check password");
+        }
 
-            App.RootFrame.Navigate(typeof(AppShell));
+        public RelayCommand LoginCommand
+        {
+            get { return new RelayCommand(Login); }
         }
     }
 }
