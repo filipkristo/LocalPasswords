@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LocalPasswordsLib.ObjectModel
 {
-    public class LoginModel
+    public class LoginModel : NotifyBase
     {
-        public String MasterPassword { get; set; }
+        public String MasterPassword { get { return Get<String>(); } set { Set(value); } }    
     }
 }

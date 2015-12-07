@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocalPasswordsLib.ObjectModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LocalPasswords.ViewModel
 {
-    public abstract class ViewModelBase : Template10.Mvvm.ViewModelBase
+    public abstract class ViewModelBase : NotifyBase
     {
 
     }

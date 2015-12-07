@@ -1,53 +1,30 @@
 ﻿using LocalPasswordsLib.BLL;
+using LocalPasswordsLib.ObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Template10.Services.NavigationService;
 using Windows.UI.Xaml.Navigation;
 
 namespace LocalPasswords.ViewModel
 {
     public class LoginViewModel : ViewModelBase
     {
-        private string password = "";
-        public string Password { get { return password; } set { Set(ref password, value); } }
+        private LoginModel Model;
 
-        public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        public LoginViewModel()
         {
-            if (state.ContainsKey(nameof(Password)))
-            {
-                Password = state[nameof(Password)]?.ToString();
-                state.Clear();
-            }
-            else
-            {
-                Password = parameter?.ToString();
-            }
+            Model = new LoginModel();
         }
 
-        public override async Task OnNavigatedFromAsync(IDictionary<string, object> state, bool suspending)
-        {
-            if (suspending)
-                state[nameof(Password)] = Password;
-
-            await Task.Yield();
-        }
-
-        public override void OnNavigatingFrom(NavigatingEventArgs args)
-        {
-            args.Cancel = false;
-        }
-
-        public void SavePassword()
+        public void Login()
         {
             var credential = new CredentialBLL();
-
             var pass = credential.RetrivePassword();
 
-            if (pass == Password)
-                this.NavigationService.Navigate(typeof(AppShell));
+            if (pass != Model.MasterPassword)
+                throw new Exception("Check password");
         }
     }
 }
