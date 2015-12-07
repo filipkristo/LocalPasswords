@@ -25,6 +25,8 @@ namespace LocalPasswords.ViewModel
                 throw new Exception("Check password");
 
             credential.SavePassword(Model.MasterPassword);
+
+            App.RootFrame.Navigate(typeof(AppShell));
         }
     }
 }

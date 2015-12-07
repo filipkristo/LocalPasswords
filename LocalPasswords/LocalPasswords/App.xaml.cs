@@ -1,4 +1,5 @@
-﻿using LocalPasswords.Views;
+﻿using LocalPasswords.Layout;
+using LocalPasswords.Views;
 using LocalPasswordsLib.BLL;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,8 @@ namespace LocalPasswords
             this.Suspending += OnSuspending;
         }
 
+        public static Frame RootFrame { get; private set; }
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
@@ -50,38 +53,41 @@ namespace LocalPasswords
             }
 #endif
 
-            var credential = new CredentialBLL();
+            var credential = new CredentialBLL();            
 
-            var shell = Window.Current.Content as AppShell;
+            RootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
-            if (shell == null)
+            if (RootFrame == null)
             {
-                // Create a AppShell to act as the navigation context and navigate to the first page
-                shell = new AppShell();
-
+                // Create a Frame to act as the navigation context and navigate to the first page
+                RootFrame = new Frame();
                 // Set the default language
-                shell.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
+                RootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
 
-                shell.AppFrame.NavigationFailed += OnNavigationFailed;
+                RootFrame.NavigationFailed += OnNavigationFailed;
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
                 }
+
+                // Place the frame in the current Window
+                Window.Current.Content = RootFrame;
             }
 
-            // Place our app shell in the current Window
-            Window.Current.Content = shell;
-
-            if (shell.AppFrame.Content == null)
+            if (RootFrame.Content == null)
             {
-                // When the navigation stack isn't restored, navigate to the first page
-                // suppressing the initial entrance animation.
-                shell.AppFrame.Navigate(typeof(LandingPage), e.Arguments, new Windows.UI.Xaml.Media.Animation.SuppressNavigationTransitionInfo());
-            }
+                // When the navigation stack isn't restored navigate to the first page,
+                // configuring the new page by passing required information as a navigation
+                // parameter
+                if (credential.CheckIfExists())                
+                    RootFrame.Navigate(typeof(LoginPage), e.Arguments);                             
+                else
+                    RootFrame.Navigate(typeof(RegisterPage), e.Arguments);
 
+            }
             // Ensure the current window is active
             Window.Current.Activate();
         }
