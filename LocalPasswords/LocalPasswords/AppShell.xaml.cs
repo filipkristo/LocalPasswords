@@ -48,19 +48,7 @@ namespace LocalPasswords
                     Symbol = Symbol.Favorite,
                     Label = "Drill In Page",
                     DestPage = typeof(DrillInPage)
-                },
-                new NavMenuItem()
-                {
-                    Symbol = Symbol.OtherUser,
-                    Label = "Login",
-                    DestPage = typeof(LoginPage)
-                },
-                new NavMenuItem()
-                {
-                    Symbol = Symbol.Repair,
-                    Label = "Register",
-                    DestPage = typeof(RegisterPage)
-                }
+                }                
             });
 
         public static AppShell Current = null;
