@@ -1,4 +1,5 @@
 ﻿using LocalPasswords.Controls;
+using LocalPasswords.Layout;
 using LocalPasswords.Views;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,18 @@ namespace LocalPasswords
                     Label = "Drill In Page",
                     DestPage = typeof(DrillInPage)
                 },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.OtherUser,
+                    Label = "Login",
+                    DestPage = typeof(LoginPage)
+                },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.Repair,
+                    Label = "Register",
+                    DestPage = typeof(RegisterPage)
+                }
             });
 
         public static AppShell Current = null;

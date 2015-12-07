@@ -29,6 +29,20 @@ namespace LocalPasswords.Layout
         public LoginPage()
         {
             this.InitializeComponent();
+
+            DataContext = new LoginViewModel();
+        }
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            await ViewModel.OnNavigatedTo(this, e);
+        }
+
+        protected override async void OnNavigatedFrom(NavigationEventArgs e)
+        {            
+            base.OnNavigatedFrom(e);
+            await ViewModel.OnNavigatedFrom(this, e);
         }
     }
 }
