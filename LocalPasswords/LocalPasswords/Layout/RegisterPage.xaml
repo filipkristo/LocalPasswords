@@ -8,10 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <PasswordBox Password="{x:Bind ViewModel.Model.MasterPassword, Mode=TwoWay}"  VerticalAlignment="Center" HorizontalAlignment="Center" />
-            <PasswordBox Password="{x:Bind ViewModel.Model.ConfirmPassword, Mode=TwoWay}"  VerticalAlignment="Center" HorizontalAlignment="Center" />
-            <Button Command="{Binding RegisterCommand}" Content="Register" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  >
+            <TextBlock>Password:</TextBlock>
+            <PasswordBox Password="{x:Bind ViewModel.Model.MasterPassword, Mode=TwoWay}" MinWidth="300" Width="100%" Margin="0,5,0,0"/>
+            <TextBlock Margin="0,10,0,0">Confirm password:</TextBlock>
+            <PasswordBox Password="{x:Bind ViewModel.Model.ConfirmPassword, Mode=TwoWay}" Margin="0,5,0,0" MinWidth="300" Width="100%"/>
+            <Button Command="{Binding RegisterCommand}" Content="Set password" HorizontalAlignment="Center"  Margin="0,15,0,0"/>
         </StackPanel>
     </Grid>
 </Page>

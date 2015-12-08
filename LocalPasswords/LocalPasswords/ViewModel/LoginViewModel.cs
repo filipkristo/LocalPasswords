@@ -26,6 +26,8 @@ namespace LocalPasswords.ViewModel
 
             if (pass != Model.MasterPassword)
                 throw new Exception("Check password");
+
+            App.RootFrame.Navigate(typeof(AppShell));
         }
 
         public RelayCommand LoginCommand
