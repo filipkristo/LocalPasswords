@@ -21,7 +21,12 @@
         </ctl:PageHeader>
 
         <StackPanel Grid.Row="1">
-
+            <ComboBox     x:Uid="DefaultLanguage"
+                          Header="Default language"  
+                          MinWidth="200"
+                          ItemsSource="{x:Bind ViewModel.Languages}" 
+                          SelectedItem="{x:Bind ViewModel.Language, Mode=TwoWay}"                          
+                          Margin="10, 10, 0, 0" />
         </StackPanel>
     </Grid>
 </Page>

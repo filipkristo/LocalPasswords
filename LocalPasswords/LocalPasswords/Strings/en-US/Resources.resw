@@ -120,6 +120,9 @@
   <data name="ConfirmPassword.Header" xml:space="preserve">
     <value>Confirm password</value>
   </data>
+  <data name="DefaultLanguage.Header" xml:space="preserve">
+    <value>Language</value>
+  </data>
   <data name="Enter.Content" xml:space="preserve">
     <value>Login</value>
   </data>
