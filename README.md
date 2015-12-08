@@ -8,7 +8,7 @@ Windows 10 Universal Application - keep your passwords secure
 * Using new Win 10 universal engine and modern design
 * Open source and available for any developers to join and improve application
 
-## Application is currently in first stage of development, so you can't install it...
+## Application is currently in beginning of development, you can install, but there is no much functionality....
 
 ## Why I want to develop local password manager:
 * Good way to explore Windows 10 UWP platform

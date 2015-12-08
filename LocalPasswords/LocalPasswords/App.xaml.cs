@@ -10,6 +10,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -53,7 +54,7 @@ namespace LocalPasswords
             }
 #endif
 
-            var credential = new CredentialBLL();            
+            CheckLanguageSettings();
 
             RootFrame = Window.Current.Content as Frame;
 
@@ -79,10 +80,11 @@ namespace LocalPasswords
 
             if (RootFrame.Content == null)
             {
+                var credential = new CredentialBLL();
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                 if (credential.CheckIfExists())                
+                if (credential.CheckIfExists())                
                     RootFrame.Navigate(typeof(LoginPage), e.Arguments);                             
                 else
                     RootFrame.Navigate(typeof(RegisterPage), e.Arguments);
@@ -90,6 +92,15 @@ namespace LocalPasswords
             }
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        private void CheckLanguageSettings()
+        {
+            var BLL = new SettingsBLL();
+            var settings = BLL.GetLanguage();            
+
+            if (ApplicationLanguages.Languages.ToList().Any(a => a == settings))
+                ApplicationLanguages.PrimaryLanguageOverride = settings;
         }
 
         /// <summary>

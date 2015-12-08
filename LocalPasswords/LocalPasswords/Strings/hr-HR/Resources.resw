@@ -126,6 +126,9 @@
   <data name="ConfirmPassword.Header" xml:space="preserve">
     <value>Ponovite lozinku</value>
   </data>
+  <data name="DefaultLanguage.Header" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
   <data name="Enter.Content" xml:space="preserve">
     <value>Prijava</value>
   </data>

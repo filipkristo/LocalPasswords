@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LocalPasswords.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,24 @@ namespace LocalPasswords.Views
     /// </summary>
     public sealed partial class NewPasswordPage : Page
     {
+        public NewPasswordViewModel ViewModel => this.DataContext as NewPasswordViewModel;
+
         public NewPasswordPage()
         {
             this.InitializeComponent();
+            this.DataContext = new NewPasswordViewModel();
+        }
+
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            await ViewModel.OnNavigatedTo(this, e);
+        }
+
+        protected override async void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            await ViewModel.OnNavigatedFrom(this, e);
         }
     }
 }
