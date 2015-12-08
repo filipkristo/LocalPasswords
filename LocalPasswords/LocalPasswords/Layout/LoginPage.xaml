@@ -12,11 +12,11 @@
 
             <TextBlock Text="{x:Bind ViewModel.Status, Mode=TwoWay}" Foreground="Red"/>
 
-            <PasswordBox x:Uid="Password"  Header="Password" Password="{x:Bind ViewModel.Model.MasterPassword, Mode=TwoWay}" MinWidth="300" Width="100%" Margin="0,10,0,0" KeyDown="{x:Bind ViewModel.OnKeyDown}"/>
-            
-            <Button x:Uid="Enter" Command="{Binding LoginCommand}" Content="Enter" HorizontalAlignment="Center"  Margin="0,15,0,0"/>
-            
-        </StackPanel>
+            <PasswordBox x:Uid="Password"  Header="Password" Password="{x:Bind ViewModel.Model.MasterPassword, Mode=TwoWay}" MinWidth="300" Margin="0,10,0,15" KeyDown="{x:Bind ViewModel.OnKeyDown}"/>
+
+            <Button x:Uid="Enter" Command="{Binding LoginCommand}" Content="Enter" HorizontalAlignment="Center"  Foreground="White" MinHeight="40" MinWidth="110" Background="{StaticResource Button}" />
         
+        </StackPanel>
+
     </Grid>
 </Page>

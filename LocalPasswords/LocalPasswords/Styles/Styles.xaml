@@ -109,5 +109,9 @@
         <Setter Property="Height" Value="48"/>
         <Setter Property="Padding" Value="0"/>
     </Style>
+    <LinearGradientBrush x:Key="Button" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF0E7999" Offset="0.987"/>
+        <GradientStop Color="#FF98E6FD"/>
+    </LinearGradientBrush>
 
 </ResourceDictionary>
