@@ -123,6 +123,9 @@
   <data name="AllPasswordsHeader.Text" xml:space="preserve">
     <value>All passwords</value>
   </data>
+  <data name="ChangePassword.Content" xml:space="preserve">
+    <value>Change password</value>
+  </data>
   <data name="ConfirmPassword.Header" xml:space="preserve">
     <value>Confirm password</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
+  </data>
+  <data name="OldPassword.Header" xml:space="preserve">
+    <value>Old password</value>
   </data>
   <data name="Password.Header" xml:space="preserve">
     <value>Password</value>

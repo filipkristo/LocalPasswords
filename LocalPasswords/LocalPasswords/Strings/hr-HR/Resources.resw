@@ -123,6 +123,9 @@
   <data name="AllPasswordsHeader.Text" xml:space="preserve">
     <value>Sve lozinke</value>
   </data>
+  <data name="ChangePassword.Content" xml:space="preserve">
+    <value>Promijeni lozinku</value>
+  </data>
   <data name="ConfirmPassword.Header" xml:space="preserve">
     <value>Ponovite lozinku</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="No" xml:space="preserve">
     <value>Ne</value>
+  </data>
+  <data name="OldPassword.Header" xml:space="preserve">
+    <value>Stara lozinka</value>
   </data>
   <data name="Password.Header" xml:space="preserve">
     <value>Lozinka</value>

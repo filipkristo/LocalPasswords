@@ -21,12 +21,55 @@
         </ctl:PageHeader>
 
         <StackPanel Grid.Row="1">
+
+            <TextBlock Text="{x:Bind ViewModel.Status, Mode=TwoWay}" Foreground="Red" Margin="50, 20, 0, 0"/>
+
             <ComboBox     x:Uid="DefaultLanguage"
                           Header="Default language"  
                           MinWidth="200"
+                          MaxWidth="1000" 
+                          HorizontalAlignment="Left"
                           ItemsSource="{x:Bind ViewModel.Languages}" 
                           SelectedItem="{x:Bind ViewModel.Language, Mode=TwoWay}"                          
-                          Margin="50, 20, 0, 0" />
+                          Margin="50, 10, 0, 0" />
+                        
+            
+            <PasswordBox x:Uid="OldPassword" 
+                         Header="Old password" 
+                         MaxWidth="1000" 
+                         MinWidth="300" 
+                         Password="{x:Bind ViewModel.OldPassword, Mode=TwoWay}"
+                         KeyDown="{x:Bind ViewModel.OnKeyDown}"
+                         HorizontalAlignment="Left"
+                         Margin="50, 30, 0, 0" />
+            
+            <PasswordBox x:Uid="MasterPassword" 
+                         Header="Master password" 
+                         MaxWidth="1000" 
+                         MinWidth="300" 
+                         Password="{x:Bind ViewModel.MasterPassword, Mode=TwoWay}"
+                         KeyDown="{x:Bind ViewModel.OnKeyDown}"
+                         HorizontalAlignment="Left"
+                         Margin="50, 20, 0, 0"/>
+
+            <PasswordBox x:Uid="ConfirmPassword" 
+                         Header="Confirm password" 
+                         MaxWidth="1000" 
+                         MinWidth="300" 
+                         Password="{x:Bind ViewModel.ConfirmPassword, Mode=TwoWay}"
+                         KeyDown="{x:Bind ViewModel.OnKeyDown}"
+                         HorizontalAlignment="Left"
+                         Margin="50, 20, 0, 0" />
+
+            <Button x:Uid="ChangePassword" 
+                    Command="{Binding ChangePasswordCommand}" 
+                    Content="Change password"                     
+                    Foreground="White" 
+                    Margin="50, 20, 0, 0"
+                    MinHeight="40" 
+                    MinWidth="110" 
+                    Background="{StaticResource Button}" />
+
         </StackPanel>
     </Grid>
 </Page>

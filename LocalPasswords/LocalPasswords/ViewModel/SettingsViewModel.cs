@@ -1,10 +1,12 @@
 ﻿using LocalPasswordsLib.BLL;
+using LocalPasswordsLib.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Globalization;
+using Windows.UI.Xaml.Input;
 
 namespace LocalPasswords.ViewModel
 {
@@ -26,12 +28,42 @@ namespace LocalPasswords.ViewModel
             }
         }
 
+        public String OldPassword { get { return Get<String>(); } set { Set(value); } }
+        public String MasterPassword { get { return Get<String>(); } set { Set(value); } }
+        public String ConfirmPassword { get { return Get<String>(); } set { Set(value); } }
+
         public SettingsViewModel()
         {
             BLL = new SettingsBLL(resourceContextForCurrentView);
             Languages = ApplicationLanguages.Languages.ToList();            
         }
 
+        public RelayCommand ChangePasswordCommand
+        {
+            get { return new RelayCommand(ChangePassword); }
+        }
 
+        public void OnKeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter)
+            {
+                ChangePassword();
+            }
+        }
+
+        private void ChangePassword()
+        {
+            Status = "";
+
+            try
+            {
+                var credential = new CredentialBLL(resourceContextForCurrentView);
+                credential.ChangeMasterPassword(OldPassword, MasterPassword, ConfirmPassword);
+            }
+            catch (Exception ex)
+            {
+                Status = ex.Message;
+            }
+        }
     }
 }
