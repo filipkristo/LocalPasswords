@@ -63,7 +63,7 @@ namespace LocalPasswords.ViewModel
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
-                App.RootFrame.Navigate(typeof(AppShell));
+                Register();
             }
         }
     }
