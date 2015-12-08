@@ -17,7 +17,7 @@ Windows 10 Universal Application - keep your passwords secure
 * Explore new windows 10 libraries, responsive and adaptive design
 * Create new file extension protocol, so you can easily import data... 
 
-## Ten password commandements
+## Ten Master password commandements
 * You shall have no other passwords before Master password.
 * You shall not make Master password copies.
 * You shall not take the Master password in vain.
