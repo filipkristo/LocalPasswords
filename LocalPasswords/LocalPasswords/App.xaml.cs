@@ -82,7 +82,7 @@ namespace LocalPasswords
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (credential.CheckIfExists())                
+                 if (credential.CheckIfExists())                
                     RootFrame.Navigate(typeof(LoginPage), e.Arguments);                             
                 else
                     RootFrame.Navigate(typeof(RegisterPage), e.Arguments);

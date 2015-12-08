@@ -44,5 +44,6 @@ namespace LocalPasswords.Layout
             base.OnNavigatedFrom(e);
             await ViewModel.OnNavigatedFrom(this, e);
         }
-    }
+
+   }
 }

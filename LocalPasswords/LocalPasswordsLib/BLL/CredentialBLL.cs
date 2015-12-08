@@ -26,7 +26,9 @@ namespace LocalPasswordsLib.BLL
         public String RetrivePassword()
         {
             var vault = new PasswordVault();
+
             var cred = vault.FindAllByResource(Resource).FirstOrDefault();
+            cred.RetrievePassword();
 
             return cred.Password;
         }

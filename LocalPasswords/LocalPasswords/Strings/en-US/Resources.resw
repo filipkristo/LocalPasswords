@@ -117,14 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfirmPassword.Header" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Enter.Content" xml:space="preserve">
+    <value>Login</value>
+  </data>
   <data name="ErrorHeader" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Invalid password...</value>
+  </data>
+  <data name="MasterPassword.Header" xml:space="preserve">
+    <value>Master password</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="Password.Header" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="PleaseWait" xml:space="preserve">
     <value>Please wait..</value>
+  </data>
+  <data name="RegisterErrorConfirm" xml:space="preserve">
+    <value>Passwords do not match...</value>
+  </data>
+  <data name="RegisterErrorFieldNull" xml:space="preserve">
+    <value>Passwords fields is empty...</value>
+  </data>
+  <data name="RegisterErrorOneFielNull" xml:space="preserve">
+    <value>You must confirm password...</value>
+  </data>
+  <data name="SetPassword.Content" xml:space="preserve">
+    <value>Set password</value>
   </data>
   <data name="Successfully" xml:space="preserve">
     <value>Successfully</value>

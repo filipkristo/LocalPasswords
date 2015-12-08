@@ -117,14 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfirmPassword.Header" xml:space="preserve">
+    <value>Ponovite lozinku</value>
+  </data>
+  <data name="Enter.Content" xml:space="preserve">
+    <value>Prijava</value>
+  </data>
   <data name="ErrorHeader" xml:space="preserve">
     <value>Greška</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>Ne ispravna lozinka...</value>
+  </data>
+  <data name="MasterPassword.Header" xml:space="preserve">
+    <value>Lozinka</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Ne</value>
   </data>
+  <data name="Password.Header" xml:space="preserve">
+    <value>Lozinka</value>
+  </data>
   <data name="PleaseWait" xml:space="preserve">
     <value>Molimo pričekajte...</value>
+  </data>
+  <data name="RegisterErrorConfirm" xml:space="preserve">
+    <value>Lozinke se ne podudaraju...</value>
+  </data>
+  <data name="RegisterErrorFieldNull" xml:space="preserve">
+    <value>Lozinke nisu unešene...</value>
+  </data>
+  <data name="RegisterErrorOneFielNull" xml:space="preserve">
+    <value>Morate potvrditi lozinku...</value>
+  </data>
+  <data name="SetPassword.Content" xml:space="preserve">
+    <value>Spremi lozinku</value>
   </data>
   <data name="Successfully" xml:space="preserve">
     <value>Uspješno</value>
