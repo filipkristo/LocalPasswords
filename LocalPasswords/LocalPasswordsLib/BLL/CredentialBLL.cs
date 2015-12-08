@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Resources.Core;
 using Windows.Security.Credentials;
 
 namespace LocalPasswordsLib.BLL
@@ -12,9 +13,11 @@ namespace LocalPasswordsLib.BLL
         public const String Resource = "LocalPasswords";
         public const String Username = "Username";
 
-        public CredentialBLL()
-        {
+        private ResourceContext resourceContext;
 
+        public CredentialBLL(ResourceContext ResourceContext)
+        {
+            this.resourceContext = ResourceContext;
         }
 
         public Boolean CheckIfExists()
@@ -33,8 +36,24 @@ namespace LocalPasswordsLib.BLL
             return cred.Password;
         }
 
-        public void SavePassword(String Password)
+        public void SavePassword(String Password, String ConfirmPassword)
         {
+            if (String.IsNullOrWhiteSpace(Password) && String.IsNullOrWhiteSpace(ConfirmPassword))
+            {
+                var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/RegisterErrorFieldNull", resourceContext).ValueAsString;
+                throw new Exception(error);
+            }
+            else if (String.IsNullOrWhiteSpace(Password) || String.IsNullOrWhiteSpace(ConfirmPassword))
+            {
+                var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/RegisterErrorOneFielNull", resourceContext).ValueAsString;
+                throw new Exception(error);
+            }
+            else if (Password != ConfirmPassword)
+            {
+                var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/RegisterErrorConfirm", resourceContext).ValueAsString;
+                throw new Exception(error);
+            }
+
             var vault = new PasswordVault();
             var cred = new PasswordCredential(Resource, Username, Password);
 
@@ -49,6 +68,19 @@ namespace LocalPasswordsLib.BLL
             }            
 
             vault.Add(cred);
+        }
+
+        public void ChangeMasterPassword(String OldPassword, String NewPassword, String ConfirmPassword)
+        {
+            var currentPassword = RetrivePassword();
+
+            if (currentPassword != OldPassword)
+            {
+                var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/ResetPasswordError", resourceContext).ValueAsString;
+                throw new Exception(error);
+            }
+
+            SavePassword(NewPassword, ConfirmPassword);
         }
     }
 }

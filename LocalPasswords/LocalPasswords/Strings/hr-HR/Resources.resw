@@ -165,6 +165,9 @@
   <data name="RegisterErrorOneFielNull" xml:space="preserve">
     <value>Morate potvrditi lozinku...</value>
   </data>
+  <data name="ResetPasswordError" xml:space="preserve">
+    <value>Provjerite staru lozinku</value>
+  </data>
   <data name="SetPassword.Content" xml:space="preserve">
     <value>Spremi lozinku</value>
   </data>

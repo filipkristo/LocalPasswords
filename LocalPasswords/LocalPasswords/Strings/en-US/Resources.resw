@@ -165,6 +165,9 @@
   <data name="RegisterErrorOneFielNull" xml:space="preserve">
     <value>You must confirm password...</value>
   </data>
+  <data name="ResetPasswordError" xml:space="preserve">
+    <value>Check old password</value>
+  </data>
   <data name="SetPassword.Content" xml:space="preserve">
     <value>Set password</value>
   </data>

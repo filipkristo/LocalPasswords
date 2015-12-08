@@ -28,7 +28,7 @@ namespace LocalPasswords.ViewModel
 
         public SettingsViewModel()
         {
-            BLL = new SettingsBLL();
+            BLL = new SettingsBLL(resourceContextForCurrentView);
             Languages = ApplicationLanguages.Languages.ToList();            
         }
 

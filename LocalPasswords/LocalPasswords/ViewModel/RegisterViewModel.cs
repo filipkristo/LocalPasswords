@@ -15,9 +15,12 @@ namespace LocalPasswords.ViewModel
     {
         public RegisterModel Model { get; set; }
 
+        private CredentialBLL BLL;
+
         public RegisterViewModel()
         {
             Model = new RegisterModel();
+            BLL = new CredentialBLL(resourceContextForCurrentView);
         }
 
         private void Register()
@@ -25,27 +28,8 @@ namespace LocalPasswords.ViewModel
             Status = "";
 
             try
-            {
-                var credential = new CredentialBLL();
-
-                if(String.IsNullOrWhiteSpace(Model.MasterPassword) && String.IsNullOrWhiteSpace(Model.ConfirmPassword))
-                {
-                    var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/RegisterErrorFieldNull", resourceContextForCurrentView).ValueAsString;
-                    throw new Exception(error);
-                }
-                else if(String.IsNullOrWhiteSpace(Model.MasterPassword) || String.IsNullOrWhiteSpace(Model.ConfirmPassword))
-                {
-                    var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/RegisterErrorOneFielNull", resourceContextForCurrentView).ValueAsString;
-                    throw new Exception(error);
-                }
-                else if (Model.MasterPassword != Model.ConfirmPassword)
-                {
-                    var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/RegisterErrorConfirm", resourceContextForCurrentView).ValueAsString;
-                    throw new Exception(error);
-                }
-
-                credential.SavePassword(Model.MasterPassword);
-
+            {                                
+                BLL.SavePassword(Model.MasterPassword, Model.ConfirmPassword);
                 App.RootFrame.Navigate(typeof(AppShell));
             }
             catch (Exception ex)
