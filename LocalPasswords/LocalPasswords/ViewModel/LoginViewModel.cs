@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Resources.Core;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 
 namespace LocalPasswords.ViewModel
@@ -21,18 +24,38 @@ namespace LocalPasswords.ViewModel
 
         private void Login()
         {
-            var credential = new CredentialBLL();
-            var pass = credential.RetrivePassword();
+            Status = "";
 
-            if (pass != Model.MasterPassword)
-                throw new Exception("Check password");
+            try
+            {
+                var credential = new CredentialBLL();
+                var pass = credential.RetrivePassword();
 
-            App.RootFrame.Navigate(typeof(AppShell));
+                if (pass != Model.MasterPassword)
+                {
+                    var error = ResourceManager.Current.MainResourceMap.GetValue("Resources/LoginError", resourceContextForCurrentView).ValueAsString;
+                    throw new Exception(error);
+                }
+
+                App.RootFrame.Navigate(typeof(AppShell));
+            }
+            catch (Exception ex)
+            {
+                Status = ex.Message;
+            }
         }
 
         public RelayCommand LoginCommand
         {
             get { return new RelayCommand(Login); }
+        }
+
+        public void OnKeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if(e.Key == Windows.System.VirtualKey.Enter)
+            {
+                Login();
+            }
         }
     }
 }
