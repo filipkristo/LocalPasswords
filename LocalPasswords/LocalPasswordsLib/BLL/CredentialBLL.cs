@@ -15,6 +15,11 @@ namespace LocalPasswordsLib.BLL
 
         private ResourceContext resourceContext;
 
+        public CredentialBLL()
+        {
+
+        }
+
         public CredentialBLL(ResourceContext ResourceContext)
         {
             this.resourceContext = ResourceContext;

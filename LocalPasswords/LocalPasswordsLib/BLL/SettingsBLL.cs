@@ -11,6 +11,11 @@ namespace LocalPasswordsLib.BLL
     {
         private ResourceContext resourceContext;
 
+        public SettingsBLL()
+        {
+
+        }
+
         public SettingsBLL(ResourceContext ResourceContext)
         {
             this.resourceContext = ResourceContext;
