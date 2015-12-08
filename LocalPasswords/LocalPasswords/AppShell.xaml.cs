@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Resources.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Core;
@@ -27,29 +28,9 @@ namespace LocalPasswords
     /// </summary>
     public sealed partial class AppShell : Page
     {
+        protected ResourceContext resourceContextForCurrentView;
         // Declare the top level nav items
-        private List<NavMenuItem> navlist = new List<NavMenuItem>(
-            new[]
-            {
-                new NavMenuItem()
-                {
-                    Symbol = Symbol.SelectAll,
-                    Label = "All passwords",
-                    DestPage = typeof(AllPasswordPage)
-                },
-                new NavMenuItem()
-                {
-                    Symbol = Symbol.Edit,
-                    Label = "New Password",
-                    DestPage = typeof(NewPasswordPage)
-                },
-                new NavMenuItem()
-                {
-                    Symbol = Symbol.Setting,
-                    Label = "Settings",
-                    DestPage = typeof(SettingsPage)
-                }                
-            });
+        private List<NavMenuItem> navlist ;
 
         public static AppShell Current = null;
 
@@ -61,6 +42,8 @@ namespace LocalPasswords
         public AppShell()
         {
             this.InitializeComponent();
+            resourceContextForCurrentView = ResourceContext.GetForCurrentView();
+            InitializeLeftBarMenu();
 
             this.Loaded += (sender, args) =>
             {
@@ -81,6 +64,32 @@ namespace LocalPasswords
             SystemNavigationManager.GetForCurrentView().BackRequested += SystemNavigationManager_BackRequested;
 
             NavMenuList.ItemsSource = navlist;
+        }
+
+        private void InitializeLeftBarMenu()
+        {
+            navlist = new List<NavMenuItem>(
+            new[]
+            {
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.SelectAll,
+                    Label = ResourceManager.Current.MainResourceMap.GetValue("Resources/AllPasswordBar", resourceContextForCurrentView).ValueAsString,
+                    DestPage = typeof(AllPasswordPage)
+                },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.Edit,
+                    Label = ResourceManager.Current.MainResourceMap.GetValue("Resources/NewPasswordBar", resourceContextForCurrentView).ValueAsString,
+                    DestPage = typeof(NewPasswordPage)
+                },
+                new NavMenuItem()
+                {
+                    Symbol = Symbol.Setting,
+                    Label = ResourceManager.Current.MainResourceMap.GetValue("Resources/SettingsBar", resourceContextForCurrentView).ValueAsString,
+                    DestPage = typeof(SettingsPage)
+                }
+            });
         }
 
         public Frame AppFrame { get { return this.frame; } }
