@@ -16,3 +16,16 @@ Windows 10 Universal Application - keep your passwords secure
 * You can save with file picker to onedrive without internet access permission and sync with other devices
 * Explore new windows 10 libraries, responsive and adaptive design
 * Create new file extension protocol, so you can easily import data... 
+
+## Ten Master password commandements :D
+* You shall have no other passwords before Master password.
+* You shall not make Master password copies.
+* You shall not take the Master password in vain.
+* Remember the day of Master password, to keep it holy.
+* Honor your Master password.
+* You shall not delete Master password.
+* You shall not commit Master password.
+* You shall not steal Master passwords from others.
+* You shall not bear false witness against your neighbors Master password.
+* You shall not covet thy neighbor's Master password.
+<3

@@ -33,21 +33,21 @@ namespace LocalPasswords
             {
                 new NavMenuItem()
                 {
-                    Symbol = Symbol.Contact,
-                    Label = "Basic Page",
-                    DestPage = typeof(BasicPage)
+                    Symbol = Symbol.SelectAll,
+                    Label = "All passwords",
+                    DestPage = typeof(AllPasswordPage)
                 },
                 new NavMenuItem()
                 {
                     Symbol = Symbol.Edit,
-                    Label = "CommandBar Page",
-                    DestPage = typeof(CommandBarPage)
+                    Label = "New Password",
+                    DestPage = typeof(NewPasswordPage)
                 },
                 new NavMenuItem()
                 {
-                    Symbol = Symbol.Favorite,
-                    Label = "Drill In Page",
-                    DestPage = typeof(DrillInPage)
+                    Symbol = Symbol.Setting,
+                    Label = "Settings",
+                    DestPage = typeof(SettingsPage)
                 }                
             });
 
