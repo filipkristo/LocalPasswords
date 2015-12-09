@@ -28,7 +28,7 @@ namespace LocalPasswords.ViewModel
 
             try
             {
-                var credential = new CredentialBLL();
+                var credential = new CredentialBLL(resourceContextForCurrentView);
                 var pass = credential.RetrivePassword();
 
                 if (pass != Model.MasterPassword)

@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Resources.Core;
 
 namespace LocalPasswordsLib.BLL
 {
     public class SettingsBLL
     {
+        private ResourceContext resourceContext;
+
         public SettingsBLL()
         {
 
+        }
+
+        public SettingsBLL(ResourceContext ResourceContext)
+        {
+            this.resourceContext = ResourceContext;
         }
 
         public void SaveLanguage(String Language)
