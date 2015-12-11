@@ -99,7 +99,7 @@ namespace LocalPasswords
             var BLL = new SettingsBLL();
             var settings = BLL.GetLanguage();            
 
-            if (ApplicationLanguages.Languages.ToList().Any(a => a == settings))
+            if (settings != null)
                 ApplicationLanguages.PrimaryLanguageOverride = settings;
         }
 

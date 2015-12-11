@@ -15,7 +15,7 @@ namespace LocalPasswords.ViewModel
     {
         private SettingsBLL BLL;
 
-        public List<String> Languages { get; set; }
+        public List<String> Languages { get; set; }        
 
         public String Language
         {
@@ -48,7 +48,8 @@ namespace LocalPasswords.ViewModel
         public SettingsViewModel()
         {
             BLL = new SettingsBLL(resourceContextForCurrentView);
-            Languages = ApplicationLanguages.Languages.ToList();
+
+            Languages = new List<String>() { "en-US", "hr-HR" };
         }
 
         public RelayCommand ChangePasswordCommand
