@@ -1,5 +1,5 @@
-MainPackage=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\bin\ARM\Release\Upload\LocalPasswords_1.1.0.0_ARM.appx
-SymbolPackage=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\AppPackages\LocalPasswords_1.1.0.0\LocalPasswords_1.1.0.0_ARM.appxsym
+MainPackage=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\bin\ARM\Release\Upload\LocalPasswords_1.1.1.0_ARM.appx
+SymbolPackage=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\AppPackages\LocalPasswords_1.1.1.0\LocalPasswords_1.1.1.0_ARM.appxsym
 ResourcePack=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\_language-hr.appx
 ResourcePack=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\_scale-100.appx
 ResourcePack=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\_scale-125.appx

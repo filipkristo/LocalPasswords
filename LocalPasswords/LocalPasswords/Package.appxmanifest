@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="22816FilipKrito.LocalPassword" Publisher="CN=15BC574E-1223-41E9-91CE-8F20D5F864E3" Version="1.1.0.0" />
+  <Identity Name="22816FilipKrito.LocalPassword" Publisher="CN=15BC574E-1223-41E9-91CE-8F20D5F864E3" Version="1.1.1.0" />
   <mp:PhoneIdentity PhoneProductId="dedf3b77-9ce3-4722-9691-68ea0dda6a46" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Local Password</DisplayName>

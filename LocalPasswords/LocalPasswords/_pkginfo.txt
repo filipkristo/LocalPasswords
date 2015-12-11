@@ -1,1 +1,1 @@
-C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\AppPackages\LocalPasswords_1.1.0.0\LocalPasswords_1.1.0.0_x86_x64_arm.appxbundle
+C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\AppPackages\LocalPasswords_1.1.1.0\LocalPasswords_1.1.1.0_x86_x64_arm.appxbundle
