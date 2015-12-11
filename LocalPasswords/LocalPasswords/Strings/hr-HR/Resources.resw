@@ -132,6 +132,9 @@
   <data name="DefaultLanguage.Header" xml:space="preserve">
     <value>Jezik</value>
   </data>
+  <data name="Email.Header" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="Enter.Content" xml:space="preserve">
     <value>Prijava</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Successfully" xml:space="preserve">
     <value>Uspješno</value>
+  </data>
+  <data name="UserName.Header" xml:space="preserve">
+    <value>Korisničko ime</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Da</value>

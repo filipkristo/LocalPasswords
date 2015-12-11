@@ -64,14 +64,24 @@
                          HorizontalAlignment="Left"
                          Margin="20, 20, 0, 0" />
 
-            <Button x:Uid="ChangePassword" 
-                    Command="{Binding ChangePasswordCommand}" 
-                    Content="Change password"                     
-                    Foreground="White" 
-                    Margin="20, 20, 0, 0"
-                    MinHeight="40" 
-                    MinWidth="110" 
-                    Background="{StaticResource Button}" />
+            <Button     x:Uid="ChangePassword" 
+                        Command="{Binding ChangePasswordCommand}" 
+                        Content="Change password"                     
+                        Foreground="White" 
+                        Margin="20, 20, 0, 0"
+                        MinHeight="40" 
+                        MinWidth="110" 
+                        Background="{StaticResource Button}" />
+
+
+            <AppBarToggleButton Label="Theme" 
+                                Command="{Binding ChangeThemeCommand}"
+                                Margin="20, 20, 0, 0"
+                                Background="{StaticResource Button}">
+                <AppBarToggleButton.Icon>
+                    <FontIcon Glyph="&#xE771;" />
+                </AppBarToggleButton.Icon>
+            </AppBarToggleButton>
 
         </StackPanel>
     </Grid>
