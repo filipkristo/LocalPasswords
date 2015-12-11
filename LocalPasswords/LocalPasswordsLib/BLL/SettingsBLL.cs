@@ -32,5 +32,18 @@ namespace LocalPasswordsLib.BLL
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             return localSettings.Values["Language"]?.ToString();
         }
+
+        //public void SaveTheme(String Theme)
+        //{
+        //    var localSettingsTheme = Windows.Storage.ApplicationData.Current.LocalSettings;
+        //    localSettingsTheme.Values["Theme"] = Theme;
+        //}
+
+        //public String GetTheme()
+        //{
+        //    var localSettingsTheme = Windows.Storage.ApplicationData.Current.LocalSettings;
+        //    return localSettingsTheme.Values["Theme"]?.ToString();
+        //}
+
     }
 }

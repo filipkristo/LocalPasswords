@@ -16,6 +16,8 @@ namespace LocalPasswords.ViewModel
 
         public List<String> Languages { get; set; }
 
+       // public List<String> Themes { get; set; }
+
         public String Language
         {
             get
@@ -28,6 +30,18 @@ namespace LocalPasswords.ViewModel
             }
         }
 
+        //public String Theme
+        //{
+        //    get
+        //    {
+        //        return BLL.GetTheme();
+        //    }
+        //    set
+        //    {
+        //        BLL.SaveTheme(value);
+        //    }
+        //}
+
         public String OldPassword { get { return Get<String>(); } set { Set(value); } }
         public String MasterPassword { get { return Get<String>(); } set { Set(value); } }
         public String ConfirmPassword { get { return Get<String>(); } set { Set(value); } }
@@ -35,7 +49,7 @@ namespace LocalPasswords.ViewModel
         public SettingsViewModel()
         {
             BLL = new SettingsBLL(resourceContextForCurrentView);
-            Languages = ApplicationLanguages.Languages.ToList();            
+            Languages = ApplicationLanguages.Languages.ToList();
         }
 
         public RelayCommand ChangePasswordCommand
@@ -65,5 +79,7 @@ namespace LocalPasswords.ViewModel
                 Status = ex.Message;
             }
         }
+
+
     }
 }
