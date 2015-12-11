@@ -29,7 +29,7 @@ namespace LocalPasswords
     /// </summary>
     public sealed partial class AppShell : Page
     {
-        protected ResourceContext resourceContextForCurrentView;
+        private ResourceContext resourceContextForCurrentView;
         // Declare the top level nav items
         private List<NavMenuItem> navlist ;
 
