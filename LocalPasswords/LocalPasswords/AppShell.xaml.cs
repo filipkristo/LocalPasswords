@@ -1,6 +1,7 @@
 ﻿using LocalPasswords.Controls;
 using LocalPasswords.Layout;
 using LocalPasswords.Views;
+using LocalPasswordsLib.BLL;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +29,7 @@ namespace LocalPasswords
     /// </summary>
     public sealed partial class AppShell : Page
     {
-        protected ResourceContext resourceContextForCurrentView;
+        private ResourceContext resourceContextForCurrentView;
         // Declare the top level nav items
         private List<NavMenuItem> navlist ;
 
@@ -64,6 +65,22 @@ namespace LocalPasswords
             SystemNavigationManager.GetForCurrentView().BackRequested += SystemNavigationManager_BackRequested;
 
             NavMenuList.ItemsSource = navlist;
+            CheckThemeSettings();
+        }
+
+        private void CheckThemeSettings()
+        {
+            var BLL = new SettingsBLL();
+            var settings = BLL.GetTheme();
+
+            if (settings == "Dark")
+            {
+                this.RequestedTheme = ElementTheme.Dark;
+            }
+            else
+            {
+                this.RequestedTheme = ElementTheme.Light;
+            }
         }
 
         private void InitializeLeftBarMenu()

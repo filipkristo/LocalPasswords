@@ -28,7 +28,7 @@ namespace LocalPasswordsLib.BLL
         public Boolean CheckIfExists()
         {
             var vault = new PasswordVault();
-            return vault.RetrieveAll().ToList().Where(x => x.Resource == Resource).Any();            
+            return vault.RetrieveAll().ToList().Where(x => x.Resource == Resource).Any();
         }
 
         public String RetrivePassword()
@@ -62,7 +62,7 @@ namespace LocalPasswordsLib.BLL
             var vault = new PasswordVault();
             var cred = new PasswordCredential(Resource, Username, Password);
 
-            if(CheckIfExists())
+            if (CheckIfExists())
             {
                 var passList = vault.FindAllByResource(Resource).ToList();
 
@@ -70,7 +70,7 @@ namespace LocalPasswordsLib.BLL
                 {
                     vault.Remove(item);
                 }
-            }            
+            }
 
             vault.Add(cred);
         }

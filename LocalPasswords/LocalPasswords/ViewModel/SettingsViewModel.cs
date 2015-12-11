@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Globalization;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Input;
 
 namespace LocalPasswords.ViewModel
@@ -14,7 +15,7 @@ namespace LocalPasswords.ViewModel
     {
         private SettingsBLL BLL;
 
-        public List<String> Languages { get; set; }
+        public List<String> Languages { get; set; }        
 
         public String Language
         {
@@ -28,6 +29,18 @@ namespace LocalPasswords.ViewModel
             }
         }
 
+        public String Theme
+        {
+            get
+            {
+                return BLL.GetTheme();
+            }
+            set
+            {
+                BLL.SaveTheme(value);
+            }
+        }
+
         public String OldPassword { get { return Get<String>(); } set { Set(value); } }
         public String MasterPassword { get { return Get<String>(); } set { Set(value); } }
         public String ConfirmPassword { get { return Get<String>(); } set { Set(value); } }
@@ -35,7 +48,8 @@ namespace LocalPasswords.ViewModel
         public SettingsViewModel()
         {
             BLL = new SettingsBLL(resourceContextForCurrentView);
-            Languages = ApplicationLanguages.Languages.ToList();            
+
+            Languages = new List<String>() { "en-US", "hr-HR" };
         }
 
         public RelayCommand ChangePasswordCommand
@@ -48,6 +62,37 @@ namespace LocalPasswords.ViewModel
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
                 ChangePassword();
+            }
+        }
+
+        public RelayCommand ChangeThemeCommand
+        {
+            get { return new RelayCommand(ChangeTheme); }
+        }
+
+        private void ChangeTheme()
+        {
+            Status = "";
+
+            try
+            {
+                var settings = new SettingsBLL(resourceContextForCurrentView);
+                var theme = settings.GetTheme();
+
+                if (theme == "Dark")
+                {
+                    AppShell.Current.RequestedTheme = ElementTheme.Light;
+                    settings.SaveTheme("Light");
+                }
+                else
+                {
+                    AppShell.Current.RequestedTheme = ElementTheme.Dark;
+                    settings.SaveTheme("Dark");
+                }
+            }
+            catch (Exception ex)
+            {
+                Status = ex.Message;
             }
         }
 
@@ -65,5 +110,7 @@ namespace LocalPasswords.ViewModel
                 Status = ex.Message;
             }
         }
+
+
     }
 }

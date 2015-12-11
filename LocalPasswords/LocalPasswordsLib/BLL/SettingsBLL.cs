@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Resources.Core;
+using Windows.UI.Xaml;
 
 namespace LocalPasswordsLib.BLL
 {
@@ -32,5 +33,19 @@ namespace LocalPasswordsLib.BLL
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             return localSettings.Values["Language"]?.ToString();
         }
+
+
+        public void SaveTheme(String Theme)
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            localSettings.Values["Theme"] = Theme;
+        }
+
+        public String GetTheme()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            return localSettings.Values["Theme"]?.ToString();
+        }
+
     }
 }
