@@ -1,0 +1,2 @@
+MainPackage=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\bin\x86\Release\Upload\LocalPasswords_1.1.0.0_x86.appx
+SymbolPackage=C:\Users\filip\Documents\GitHubVisualStudio\LocalPasswords\LocalPasswords\LocalPasswords\AppPackages\LocalPasswords_1.1.0.0\LocalPasswords_1.1.0.0_x86.appxsym
