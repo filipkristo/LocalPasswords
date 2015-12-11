@@ -75,8 +75,7 @@
 
 
             <AppBarToggleButton Label="Theme" 
-                                Checked="ThemeToggleButton_Checked" 
-                                Unchecked="ThemeToggleButton_Unchecked"
+                                Command="{Binding ChangeThemeCommand}"
                                 Margin="20, 20, 0, 0"
                                 Background="{StaticResource Button}">
                 <AppBarToggleButton.Icon>
