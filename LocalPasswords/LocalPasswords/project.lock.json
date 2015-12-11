@@ -209,6 +209,14 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "PlatformSpecific.Analyzer/2.0.2": {
+        "compile": {
+          "lib/uap/PlatformSpecific.dll": {}
+        },
+        "runtime": {
+          "lib/uap/PlatformSpecific.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -1793,6 +1801,14 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "PlatformSpecific.Analyzer/2.0.2": {
+        "compile": {
+          "lib/uap/PlatformSpecific.dll": {}
+        },
+        "runtime": {
+          "lib/uap/PlatformSpecific.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3412,6 +3428,14 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "PlatformSpecific.Analyzer/2.0.2": {
+        "compile": {
+          "lib/uap/PlatformSpecific.dll": {}
+        },
+        "runtime": {
+          "lib/uap/PlatformSpecific.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5038,6 +5062,14 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "PlatformSpecific.Analyzer/2.0.2": {
+        "compile": {
+          "lib/uap/PlatformSpecific.dll": {}
+        },
+        "runtime": {
+          "lib/uap/PlatformSpecific.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -6655,6 +6687,14 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "PlatformSpecific.Analyzer/2.0.2": {
+        "compile": {
+          "lib/uap/PlatformSpecific.dll": {}
+        },
+        "runtime": {
+          "lib/uap/PlatformSpecific.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8281,6 +8321,14 @@
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
         }
       },
+      "PlatformSpecific.Analyzer/2.0.2": {
+        "compile": {
+          "lib/uap/PlatformSpecific.dll": {}
+        },
+        "runtime": {
+          "lib/uap/PlatformSpecific.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.0, )",
@@ -9898,6 +9946,14 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "PlatformSpecific.Analyzer/2.0.2": {
+        "compile": {
+          "lib/uap/PlatformSpecific.dll": {}
+        },
+        "runtime": {
+          "lib/uap/PlatformSpecific.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -11945,6 +12001,21 @@
         "Newtonsoft.Json.nuspec",
         "package/services/metadata/core-properties/49e907fc018c4c7ab632e6d4ad4766f8.psmdcp",
         "tools/install.ps1"
+      ]
+    },
+    "PlatformSpecific.Analyzer/2.0.2": {
+      "sha512": "y8GWISxgxQ9v9KWTCuZG9fCsiZ9YSYQkVQUdscroqwT0fsUnYIabE/7puIsQk4vea6WLpFRCWplZw4vIeDpVkw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "analyzers/dotnet/PlatformSpecificAnalyzer.dll",
+        "build/uap/PlatformSpecific.Analyzer.targets",
+        "lib/uap/PlatformSpecific.dll",
+        "package/services/metadata/core-properties/48250d7ff3b2437ab72350b9c9c558fa.psmdcp",
+        "PlatformSpecific.Analyzer.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -14646,7 +14717,8 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
-      "Newtonsoft.Json >= 7.0.1"
+      "Newtonsoft.Json >= 7.0.1",
+      "PlatformSpecific.Analyzer >= 2.0.2"
     ],
     "UAP,Version=v10.0": []
   }
